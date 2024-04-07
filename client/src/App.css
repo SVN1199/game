@@ -1,0 +1,632 @@
+body {
+  padding: 0;
+  margin: 0;
+  background-color: springgreen;
+  user-select: none;
+}
+
+.main {
+  position: absolute;
+  left: 50%;
+  top: 45%;
+  transform: translate(-50%, -50%);
+}
+
+.by-author {
+  position: absolute;
+  bottom: 2%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-weight: 600;
+  width: 100%;
+  text-align: center;
+}
+
+.loading {
+  border: 4px solid white;
+  border-top: 4px solid transparent;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  animation: spin 1s linear infinite;
+  display: flex;
+  position: absolute;
+  left: 45%;
+  top: 40%;
+  transform: translate(-50%, -50%);
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.spinner {
+  border: 4px solid white;
+  border-top: 4px solid transparent;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.main-card {
+  display: flex;
+  flex-direction: row;
+  background-color: indigo;
+  padding: 20px;
+  justify-content: space-around;
+  border-radius: 5px;
+}
+
+.main-card .versus {
+  margin: 5px 15px 10px 15px;
+  font-size: 20px;
+  font-weight: 700;
+  color: white;
+}
+
+.main-card input {
+  padding: 10px;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 20px;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+.game-name {
+  margin-bottom: 15px;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 800;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  color: indigo;
+  border-bottom: 2px solid indigo;
+}
+
+.main button {
+  width: 100%;
+  background-color: indigo;
+  padding: 10px;
+  border: none;
+  color: white;
+  margin-top: 10px;
+  border-radius: 5px;
+  font-size: 16px;
+  text-transform: uppercase;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.main .go-game {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  padding: 10px;
+  background-color: indigo;
+  text-align: center;
+  color: white;
+  margin-top: 15px;
+  border-radius: 10px;
+  text-transform: uppercase;
+  font-weight: 800;
+  cursor: pointer;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0.5;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.game {
+  position: relative;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  height: 100vh;
+}
+
+.heading {
+  text-align: center;
+  font-size: 20px;
+  font-weight: 800;
+}
+
+.way-to-play {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 10px;
+  border-radius: 10px;
+  border: 2px solid green;
+  user-select: none;
+}
+
+.game_play_mode {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  gap: 25px;
+  width: 250px;
+}
+
+.game_play_mode .inside_play_mode {
+  background-color: indigo;
+  color: white;
+  padding: 10px;
+  width: 100%;
+  text-align: center;
+  margin-top: 15px;
+  border-radius: 10px;
+  box-shadow: 1px 1px 4px 0.2px indigo;
+  cursor: pointer;
+}
+
+.game_play_mode .inside_play_mode:active {
+  background-color: green;
+}
+
+.game {
+  position: relative;
+}
+
+.manual-play {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.user-choice {
+  position: relative;
+  margin-top: 15px;
+  width: 70%;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 9px;
+  border-radius: 5px;
+  user-select: none;
+}
+
+.player-name {
+  text-align: center;
+  font-size: 15px;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+}
+
+.images-choice {
+  display: flex;
+  justify-content: space-around;
+}
+
+.images-choice img {
+  width: 45px;
+  height: 45px;
+  border: 2px solid indigo;
+  border-radius: 5px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.images-choice label input[type="radio"] {
+  color: indigo !important;
+  background-color: indigo !important;
+}
+
+.versus-image {
+  height: 60px !important;
+  width: 80px !important;
+  position: absolute;
+  bottom: 10%;
+  animation: blink 0.6s infinite alternate;
+  border: 3px solid indigo !important;
+  cursor: pointer;
+  scale: 1;
+  transition: 1s ease-in-out;
+}
+
+.versus-image-active:active {
+  scale: 0.8;
+}
+
+.versus-image:active {
+  border: 3px solid green !important;
+}
+
+.box-rounds {
+  padding: 15px;
+  background-color: white;
+  height: 60px;
+  width: 180px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 26px;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+@keyframes blink {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0.3;
+  }
+}
+
+.images-choice {
+  gap: 15px;
+}
+
+.images-choice label {
+  display: flex;
+  flex-direction: row;
+}
+
+.images-choice label input {
+  position: absolute;
+}
+
+.round-container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 15px;
+}
+
+.round-box {
+  background-color: white;
+  padding: 15px;
+  height: 25px;
+  width: 180px;
+  font-size: 14px;
+  margin-top: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  border-radius: 5px;
+}
+
+.view-results {
+  padding: 10px;
+  width: 180px;
+  background-color: indigo;
+  color: white !important;
+  font-weight: 700;
+  border-radius: 5px;
+  margin-top: 20px;
+  cursor: pointer;
+  text-align: center;
+}
+
+.winner-rounds {
+  background-color: white;
+  padding: 15px;
+  height: 25px;
+  width: 180px;
+  font-size: 19px;
+  font-weight: 600;
+  margin-top: 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  border-radius: 5px;
+}
+
+.view-results a {
+  color: white;
+  text-decoration: none;
+}
+
+.result-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+}
+
+.result-box {
+  height: auto;
+  width: 550px;
+}
+
+.game-result-heading {
+  text-align: center;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 22px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  margin-top: 10px;
+  border-bottom: 3px solid indigo;
+}
+
+.rounds {
+  height: 45px;
+  padding: 10px;
+  margin-top: 10px;
+  background-color: white;
+  border-radius: 5px;
+  display: flex;
+  gap: 20px;
+  flex-direction: row;
+  justify-content: space-evenly;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  text-align: center;
+}
+
+.players-choice {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 60px;
+  text-transform: capitalize;
+}
+
+.result {
+  color: blue;
+  text-transform: capitalize;
+  font-weight: 700;
+}
+
+.winner-game {
+  text-align: center;
+  font-size: 18px;
+  font-weight: 600;
+  margin-top: 15px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  color: black;
+}
+
+.game-choice {
+  height: 70px;
+  width: 90px;
+  background-color: green;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.game-choice:active {
+  background-color: black;
+  color: white;
+}
+
+.startloading {
+  width: 15px;
+  height: 15px;
+  border: 3px solid #ccc;
+  border-radius: 50%;
+  border-top-color: #333;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.home {
+  position: absolute;
+  left: 2%;
+  margin-top: 2%;
+  font-size: 22px;
+  color: indigo !important;
+  cursor: pointer;
+  z-index: 100;
+}
+
+.game-live {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 20px;
+  padding: 10px;
+  font-weight: 600;
+}
+
+.note {
+  position: absolute;
+  right: 2%;
+  top: 1%;
+  border-radius: 5px;
+  height: auto;
+  text-align: center;
+  padding: 5px;
+  width: 50px;
+  background-color: black;
+  color: white;
+}
+
+.note:active {
+  background-color: green;
+}
+
+.modal-box {
+  height: auto;
+  width: 250px;
+  background-color: bisque;
+  position: absolute;
+  left: 50%;
+  top: 30%;
+  transform: translate(-50%, -50%);
+  padding: 10px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  box-shadow: 1px 1px 10px 1px green;
+  border-radius: 10px;
+}
+
+.modal-box button {
+  padding: 5px;
+  border: none;
+  outline: none;
+  width: 100%;
+  background-color: black;
+  color: white;
+  border-radius: 10px;
+}
+
+.modal-box button:active {
+  background-color: green;
+}
+
+@media screen and (max-width: 964px) {
+  .home {
+    position: absolute;
+    margin-top: 0;
+    left: 3%;
+    top: 1%;
+  }
+
+  .result-container {
+    overflow-y: hidden;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+    margin-top: 20px;
+  }
+
+  .result-box {
+    height: auto;
+    width: 100%;
+  }
+
+  .game-result-heading {
+    text-align: center;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 16px;
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+      sans-serif;
+    margin-top: 15px;
+    border-bottom: 3px solid indigo;
+  }
+
+  .rounds {
+    height: 45px;
+    padding: 10px;
+    margin-top: 10px;
+    background-color: white;
+    border-radius: 5px;
+    display: flex;
+    gap: 20px;
+    flex-direction: row;
+    justify-content: space-evenly;
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+      sans-serif;
+    text-align: center;
+  }
+
+  .players-choice {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 60px;
+  }
+
+  .result {
+    color: blue;
+    text-transform: capitalize;
+    font-weight: 700;
+  }
+
+  .winner-game {
+    text-align: center;
+    font-size: 18px;
+    font-weight: 600;
+    margin-top: 15px;
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+      sans-serif;
+    color: black;
+  }
+
+  .user-choice {
+    width: 90%;
+    position: relative;
+  }
+
+  .images-choice {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .images-choice img {
+    width: 50px;
+    height: 50px;
+    border: 2px solid indigo;
+    border-radius: 5px;
+    padding: 10px;
+  }
+
+  .versus-image {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .images-choice {
+    gap: 15px;
+  }
+
+  .images-choice label {
+    display: flex;
+    flex-direction: column !important;
+  }
+
+  .images-choice label input {
+    position: absolute;
+  }
+
+  .main-card {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .versus {
+    text-align: center;
+    margin-top: 10px !important;
+    margin-bottom: 5px;
+  }
+}
